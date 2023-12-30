@@ -5,10 +5,22 @@ FROM node:19.2-alpine3.16
 WORKDIR /app
 
 # Dest /app = ./
-COPY app.js package.json ./
+COPY package.json ./
 
-# Instalar las dependencias
+# Install dependencies
 RUN npm install
 
-# Comando run de la imagen
+# Dest /app = ./
+COPY . .
+
+# Testing
+RUN npm run test
+
+# Remove unnecessary files for PROD
+RUN rm -rf tests && rm -rf node_modules
+
+# Install only for PROD
+RUN npm install --prod
+
+# Run the image
 CMD ["node", "app.js"]
