@@ -1,4 +1,5 @@
-# /app /usr /lib These folders already exist
+# FROM --platform=$BUILDPLATFORM node:19.2-alpine3.16
+# docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm64/v8 -t martinsr99/cron-ticker --push .
 FROM node:19.2-alpine3.16
 
 # cd app
