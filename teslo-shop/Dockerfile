@@ -9,7 +9,6 @@ WORKDIR /app
 COPY package.json package.json
 RUN yarn install --frozen-lockfile
 
-
 FROM node:19-alpine3.15 as builder
 WORKDIR /app
 COPY --from=dev-deps /app/node_modules ./node_modules
