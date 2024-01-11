@@ -25,6 +25,11 @@ http://localhost:3000/api/seed
 
 # Production notes:
 
+Ejecutar este comando
+```
+docker compose -f docker-compose.prod.yml build
+```
+
 
 ---
 ✍️ Author: Martín Siles
